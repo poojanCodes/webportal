@@ -239,57 +239,57 @@ export default function FeedbackPage() {
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10 w-full space-y-8">
         {/* Page Header */}
         <div className="text-center space-y-3">
-          <div className="gsap-reveal inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-500/10 text-emerald-700 dark:text-emerald-300 border border-emerald-500/20 text-xs font-bold">
-            <Lock className="w-3.5 h-3.5 text-emerald-500" />
+          <div className="gsap-reveal inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-100 dark:bg-emerald-950 text-[#064E3B] dark:text-emerald-300 border border-[#059669] dark:border-emerald-500 text-xs font-extrabold shadow-sm">
+            <Lock className="w-3.5 h-3.5 text-[#047857] dark:text-emerald-400" />
             <span>256-Bit Cryptographically Encrypted Gate</span>
           </div>
-          <h1 className="gsap-reveal text-3xl sm:text-5xl font-extrabold tracking-tight text-slate-900 dark:text-white">
+          <h1 className="gsap-reveal text-3xl sm:text-5xl font-extrabold tracking-tight text-slate-950 dark:text-white">
             Anonymous Student <span className="gradient-text">Evaluation Portal</span>
           </h1>
-          <p className="gsap-reveal text-sm sm:text-base text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
+          <p className="gsap-reveal text-sm sm:text-base text-slate-700 dark:text-slate-200 max-w-2xl mx-auto font-bold">
             Your feedback directly impacts academic quality assurance. No student IDs, IP addresses, or identity tokens are logged or accessible to faculty or administrators.
           </p>
         </div>
 
-        {/* Anonymity Confirmation Guarantee Banner */}
-        <div className="gsap-reveal p-6 rounded-2xl bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 border border-indigo-500/30 text-white shadow-lg flex flex-col sm:flex-row items-center justify-between gap-4">
+        {/* Anonymity Confirmation Guarantee Banner (Bento Green) */}
+        <div className="gsap-reveal bento-card bento-green p-6 shadow-sm flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-4">
-            <div className="p-3 rounded-xl bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 flex-shrink-0">
+            <div className="p-3 rounded-2xl bg-emerald-200 dark:bg-emerald-900/60 border border-emerald-400 dark:border-emerald-700 flex-shrink-0 text-[#064E3B] dark:text-emerald-200">
               <ShieldCheck className="w-8 h-8" />
             </div>
             <div>
-              <h4 className="font-bold text-sm text-white flex items-center gap-2">
+              <h4 className="font-extrabold text-sm flex items-center gap-2">
                 Guaranteed Anonymous Session
-                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                <span className="w-2.5 h-2.5 rounded-full bg-emerald-600 dark:bg-emerald-400 animate-pulse" />
               </h4>
-              <p className="text-xs text-slate-300">
-                Session Token: <code className="text-indigo-300 bg-slate-800 px-1.5 py-0.5 rounded">0x7F9A...ANON</code> • No Cookies Saved • No Identity Trackers
+              <p className="bento-subtext text-xs font-bold">
+                Session Token: <code className="font-mono bg-emerald-200/80 dark:bg-emerald-950 px-2 py-0.5 rounded font-extrabold text-[#064E3B] dark:text-emerald-300 border border-emerald-300 dark:border-emerald-700">0x7F9A...ANON</code> • No Cookies Saved • Zero Identity Trackers
               </p>
             </div>
           </div>
-          <div className="text-right text-xs text-slate-400">
+          <div className="text-right text-xs font-extrabold text-[#064E3B] dark:text-emerald-300">
             Institutional Protocol v2.4
           </div>
         </div>
 
-        {/* Main Evaluation Form */}
+        {/* Main Evaluation Form (High Contrast Container) */}
         <motion.form
           onSubmit={handleSubmit}
           animate={shakeForm ? { x: [-10, 10, -8, 8, -4, 4, 0] } : {}}
           transition={{ duration: 0.4 }}
-          className="gsap-reveal bg-white dark:bg-slate-900/90 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 sm:p-10 shadow-xl space-y-10"
+          className="gsap-reveal bg-white dark:bg-slate-900 border-2 border-slate-300 dark:border-slate-800 rounded-[32px] p-6 sm:p-10 shadow-lg space-y-10"
         >
           {/* SECTION 1: 4-Tier Selection Cascade */}
           <div className="space-y-6">
-            <div className="flex items-center gap-3 pb-3 border-b border-slate-200 dark:border-slate-800">
-              <div className="w-8 h-8 rounded-lg bg-indigo-600/10 text-indigo-600 dark:text-indigo-400 flex items-center justify-center font-bold text-sm">
+            <div className="flex items-center gap-3 pb-4 border-b-2 border-slate-200 dark:border-slate-800">
+              <div className="w-9 h-9 rounded-xl bg-indigo-700 text-white flex items-center justify-center font-extrabold text-sm shadow-md">
                 1
               </div>
               <div>
-                <h3 className="font-bold text-lg text-slate-900 dark:text-white">
+                <h3 className="font-extrabold text-lg text-slate-950 dark:text-white">
                   4-Tier Faculty Selection Cascade
                 </h3>
-                <p className="text-xs text-slate-500 dark:text-slate-400">
+                <p className="text-xs text-slate-700 dark:text-slate-300 font-bold">
                   Select your academic department to reveal active courses and assigned instructors.
                 </p>
               </div>
@@ -298,13 +298,13 @@ export default function FeedbackPage() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
               {/* Tier 1: Department */}
               <div className="space-y-2">
-                <label className="block text-xs font-bold uppercase tracking-wider text-slate-600 dark:text-slate-300">
+                <label className="block text-xs font-extrabold uppercase tracking-wider text-slate-900 dark:text-slate-100">
                   Tier 1: Academic Department
                 </label>
                 <select
                   value={selectedDeptId}
                   onChange={handleDepartmentChange}
-                  className="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white text-sm font-medium focus:ring-2 focus:ring-indigo-500 focus:outline-none transition-all"
+                  className="w-full px-4 py-3.5 rounded-2xl bg-slate-50 dark:bg-slate-800 border-2 border-slate-300 dark:border-slate-700 text-slate-950 dark:text-white text-sm font-extrabold focus:ring-2 focus:ring-indigo-600 focus:outline-none transition-all"
                 >
                   <option value="">-- Choose Department --</option>
                   {departments.map((dept) => (
@@ -317,14 +317,14 @@ export default function FeedbackPage() {
 
               {/* Tier 2: Semester / Class */}
               <div className="space-y-2">
-                <label className="block text-xs font-bold uppercase tracking-wider text-slate-600 dark:text-slate-300">
+                <label className="block text-xs font-extrabold uppercase tracking-wider text-slate-900 dark:text-slate-100">
                   Tier 2: Semester / Level
                 </label>
                 <select
                   disabled={!selectedDeptId}
                   value={selectedSemId}
                   onChange={handleSemChange}
-                  className="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white text-sm font-medium focus:ring-2 focus:ring-indigo-500 focus:outline-none disabled:opacity-50 transition-all"
+                  className="w-full px-4 py-3.5 rounded-2xl bg-slate-50 dark:bg-slate-800 border-2 border-slate-300 dark:border-slate-700 text-slate-950 dark:text-white text-sm font-extrabold focus:ring-2 focus:ring-indigo-600 focus:outline-none disabled:opacity-50 transition-all"
                 >
                   <option value="">-- Select Semester --</option>
                   {activeSemesters.map((sem) => (
@@ -337,14 +337,14 @@ export default function FeedbackPage() {
 
               {/* Tier 3: Subject / Course */}
               <div className="space-y-2">
-                <label className="block text-xs font-bold uppercase tracking-wider text-slate-600 dark:text-slate-300">
+                <label className="block text-xs font-extrabold uppercase tracking-wider text-slate-900 dark:text-slate-100">
                   Tier 3: Course / Module
                 </label>
                 <select
                   disabled={!selectedSemId}
                   value={selectedCourseCode}
                   onChange={handleCourseChange}
-                  className="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white text-sm font-medium focus:ring-2 focus:ring-indigo-500 focus:outline-none disabled:opacity-50 transition-all"
+                  className="w-full px-4 py-3.5 rounded-2xl bg-slate-50 dark:bg-slate-800 border-2 border-slate-300 dark:border-slate-700 text-slate-950 dark:text-white text-sm font-extrabold focus:ring-2 focus:ring-indigo-600 focus:outline-none disabled:opacity-50 transition-all"
                 >
                   <option value="">-- Select Course --</option>
                   {activeCourses.map((crs) => (
@@ -357,14 +357,14 @@ export default function FeedbackPage() {
 
               {/* Tier 4: Assigned Faculty Member */}
               <div className="space-y-2">
-                <label className="block text-xs font-bold uppercase tracking-wider text-slate-600 dark:text-slate-300">
+                <label className="block text-xs font-extrabold uppercase tracking-wider text-slate-900 dark:text-slate-100">
                   Tier 4: Assigned Faculty Member
                 </label>
                 <select
                   disabled={!selectedCourseCode}
                   value={selectedFacultyId}
                   onChange={(e) => setSelectedFacultyId(e.target.value)}
-                  className="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white text-sm font-medium focus:ring-2 focus:ring-indigo-500 focus:outline-none disabled:opacity-50 transition-all"
+                  className="w-full px-4 py-3.5 rounded-2xl bg-slate-50 dark:bg-slate-800 border-2 border-slate-300 dark:border-slate-700 text-slate-950 dark:text-white text-sm font-extrabold focus:ring-2 focus:ring-indigo-600 focus:outline-none disabled:opacity-50 transition-all"
                 >
                   <option value="">-- Select Faculty --</option>
                   {facultyList
@@ -382,33 +382,33 @@ export default function FeedbackPage() {
               </div>
             </div>
 
-            {/* Selected Faculty Preview Banner */}
+            {/* Selected Faculty Preview Card (Bento Lavender) */}
             {activeFaculty && (
               <motion.div
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="p-4 rounded-2xl bg-indigo-50 dark:bg-indigo-950/40 border border-indigo-200 dark:border-indigo-800/60 flex items-center justify-between gap-4"
+                className="bento-card bento-lavender p-5 shadow-sm flex items-center justify-between gap-4"
               >
-                <div className="flex items-center gap-3">
+                <div className="flex items-center gap-3.5">
                   <div
-                    className={`w-12 h-12 rounded-xl bg-gradient-to-br ${activeFaculty.avatarBg} text-white font-bold flex items-center justify-center text-lg shadow-md`}
+                    className={`w-12 h-12 rounded-2xl bg-gradient-to-br ${activeFaculty.avatarBg} text-white font-extrabold flex items-center justify-center text-lg shadow-md`}
                   >
                     {activeFaculty.initials}
                   </div>
                   <div>
-                    <h4 className="font-bold text-slate-900 dark:text-white text-sm">
+                    <h4 className="font-extrabold text-sm text-[#2E1065] dark:text-white">
                       Evaluating: {activeFaculty.name}
                     </h4>
-                    <p className="text-xs text-slate-500 dark:text-slate-400">
+                    <p className="bento-subtext text-xs font-bold">
                       {activeFaculty.title} • {activeFaculty.department}
                     </p>
                   </div>
                 </div>
 
                 {isCooldownActive && (
-                  <div className="flex items-center gap-1.5 text-xs text-amber-600 dark:text-amber-400 font-bold bg-amber-500/10 px-3 py-1.5 rounded-lg border border-amber-500/20">
+                  <div className="flex items-center gap-1.5 text-xs text-amber-950 dark:text-amber-300 font-extrabold bg-amber-200 dark:bg-amber-950 px-3 py-1.5 rounded-xl border border-amber-400 dark:border-amber-700">
                     <Info className="w-4 h-4" />
-                    <span>Recent Submission Cooldown Active</span>
+                    <span>Submission Cooldown Active</span>
                   </div>
                 )}
               </motion.div>
@@ -417,43 +417,43 @@ export default function FeedbackPage() {
 
           {/* SECTION 2: 6-Parameter Evaluation Matrix */}
           <div className="space-y-6">
-            <div className="flex items-center gap-3 pb-3 border-b border-slate-200 dark:border-slate-800">
-              <div className="w-8 h-8 rounded-lg bg-violet-600/10 text-violet-600 dark:text-violet-400 flex items-center justify-center font-bold text-sm">
+            <div className="flex items-center gap-3 pb-4 border-b-2 border-slate-200 dark:border-slate-800">
+              <div className="w-9 h-9 rounded-xl bg-violet-700 text-white flex items-center justify-center font-extrabold text-sm shadow-md">
                 2
               </div>
               <div>
-                <h3 className="font-bold text-lg text-slate-900 dark:text-white">
+                <h3 className="font-extrabold text-lg text-slate-950 dark:text-white">
                   6-Parameter Performance Evaluation Matrix
                 </h3>
-                <p className="text-xs text-slate-500 dark:text-slate-400">
-                  Rate each dimension from 1 (Poor / Needs Major Work) to 5 (Exceptional / Exemplary).
+                <p className="text-xs text-slate-700 dark:text-slate-300 font-bold">
+                  Rate each dimension from 1 (Needs Work) to 5 (Exemplary).
                 </p>
               </div>
             </div>
 
-            <div className="space-y-6">
+            <div className="space-y-4">
               {ratingParameters.map((param) => {
                 const currentScore = ratings[param.id];
                 return (
                   <div
                     key={param.id}
-                    className="p-5 rounded-2xl bg-slate-50/70 dark:bg-slate-800/40 border border-slate-200/80 dark:border-slate-800 flex flex-col md:flex-row items-start md:items-center justify-between gap-4"
+                    className="p-5 rounded-2xl bg-slate-50 dark:bg-slate-800/80 border-2 border-slate-200 dark:border-slate-700 flex flex-col md:flex-row items-start md:items-center justify-between gap-4"
                   >
                     <div className="space-y-1 max-w-lg">
-                      <h4 className="font-bold text-sm text-slate-900 dark:text-white flex items-center gap-2">
+                      <h4 className="font-extrabold text-sm text-slate-950 dark:text-white flex items-center gap-2">
                         {param.label}
                         {currentScore > 0 && (
-                          <span className="text-xs font-bold px-2 py-0.5 rounded bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 border border-indigo-500/20">
+                          <span className="text-xs font-extrabold px-2.5 py-0.5 rounded-full bg-indigo-100 dark:bg-indigo-950 text-indigo-900 dark:text-indigo-200 border border-indigo-300 dark:border-indigo-700">
                             Score: {currentScore} / 5
                           </span>
                         )}
                       </h4>
-                      <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
+                      <p className="text-xs text-slate-700 dark:text-slate-300 leading-relaxed font-bold">
                         {param.desc}
                       </p>
                     </div>
 
-                    {/* Star Chips Input Matrix (1-5) */}
+                    {/* Star Chips Input Matrix (1-5 High Contrast) */}
                     <div className="flex items-center gap-2 self-stretch md:self-auto justify-between md:justify-end">
                       {[1, 2, 3, 4, 5].map((starVal) => {
                         const isSelected = currentScore >= starVal;
@@ -462,10 +462,10 @@ export default function FeedbackPage() {
                             key={starVal}
                             type="button"
                             onClick={() => handleRatingChange(param.id, starVal)}
-                            className={`flex flex-col items-center justify-center w-11 h-11 rounded-xl font-bold text-sm transition-all duration-200 ${
+                            className={`flex flex-col items-center justify-center w-11 h-11 rounded-2xl font-extrabold text-sm transition-all duration-200 ${
                               isSelected
-                                ? "bg-gradient-to-br from-indigo-600 to-violet-600 text-white shadow-md shadow-indigo-500/20 scale-105"
-                                : "bg-white dark:bg-slate-800 text-slate-500 dark:text-slate-400 border border-slate-200 dark:border-slate-700 hover:border-indigo-400"
+                                ? "bg-gradient-to-br from-indigo-700 to-violet-700 text-white shadow-md shadow-indigo-600/30 scale-105"
+                                : "bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 border-2 border-slate-300 dark:border-slate-700 hover:border-indigo-500"
                             }`}
                           >
                             <Star
@@ -473,7 +473,7 @@ export default function FeedbackPage() {
                                 isSelected ? "fill-amber-300 text-amber-300" : "text-slate-400"
                               }`}
                             />
-                            <span className="text-[10px] mt-0.5">{starVal}</span>
+                            <span className="text-[10px] mt-0.5 font-extrabold">{starVal}</span>
                           </button>
                         );
                       })}
@@ -486,24 +486,24 @@ export default function FeedbackPage() {
 
           {/* SECTION 3: Constructive Qualitative Comments */}
           <div className="space-y-6">
-            <div className="flex items-center gap-3 pb-3 border-b border-slate-200 dark:border-slate-800">
-              <div className="w-8 h-8 rounded-lg bg-emerald-600/10 text-emerald-600 dark:text-emerald-400 flex items-center justify-center font-bold text-sm">
+            <div className="flex items-center gap-3 pb-4 border-b-2 border-slate-200 dark:border-slate-800">
+              <div className="w-9 h-9 rounded-xl bg-emerald-700 text-white flex items-center justify-center font-extrabold text-sm shadow-md">
                 3
               </div>
               <div>
-                <h3 className="font-bold text-lg text-slate-900 dark:text-white">
+                <h3 className="font-extrabold text-lg text-slate-950 dark:text-white">
                   Constructive Qualitative Comments
                 </h3>
-                <p className="text-xs text-slate-500 dark:text-slate-400">
+                <p className="text-xs text-slate-700 dark:text-slate-300 font-bold">
                   Provide specific classroom observations, teaching highlights, or suggestions for course pacing.
                 </p>
               </div>
             </div>
 
             <div className="space-y-2">
-              <div className="flex items-center justify-between text-xs text-slate-500 dark:text-slate-400">
+              <div className="flex items-center justify-between text-xs text-slate-700 dark:text-slate-300 font-extrabold">
                 <span>Detailed Classroom Feedback</span>
-                <span className={comment.length > 500 ? "text-amber-500 font-bold" : ""}>
+                <span className={comment.length > 500 ? "text-amber-800 dark:text-amber-400 font-extrabold" : ""}>
                   {comment.length} / 600 chars
                 </span>
               </div>
@@ -514,19 +514,19 @@ export default function FeedbackPage() {
                 value={comment}
                 onChange={(e) => setComment(e.target.value)}
                 placeholder="E.g., Dr. Thorne's practical coding demonstrations made complex neural network math very accessible. Suggest adding more live debugging exercises during labs."
-                className="w-full p-4 rounded-2xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white text-sm focus:ring-2 focus:ring-indigo-500 focus:outline-none transition-all placeholder:text-slate-400"
+                className="w-full p-4 rounded-2xl bg-slate-50 dark:bg-slate-800 border-2 border-slate-300 dark:border-slate-700 text-slate-950 dark:text-white text-sm font-bold focus:ring-2 focus:ring-indigo-600 focus:outline-none transition-all placeholder:text-slate-500"
               />
 
-              {/* Profanity Filter Warning Banner */}
+              {/* Profanity Filter Warning Banner (Bento Peach High Contrast) */}
               {hasProfanity && (
                 <motion.div
                   initial={{ opacity: 0, y: 5 }}
                   animate={{ opacity: 1, y: 0 }}
-                  className="p-3 rounded-xl bg-rose-500/10 border border-rose-500/30 text-rose-600 dark:text-rose-400 text-xs font-semibold flex items-center gap-2"
+                  className="bento-card bento-peach p-4 text-xs font-extrabold flex items-center gap-2 shadow-sm"
                 >
-                  <AlertCircle className="w-4 h-4 flex-shrink-0" />
+                  <AlertCircle className="w-4 h-4 flex-shrink-0 text-[#7C2D12] dark:text-orange-300" />
                   <span>
-                    Warning: Real-time scanner detected toxic or unparliamentary language. Please maintain constructive academic feedback standards.
+                    Warning: Real-time scanner detected toxic language. Please maintain constructive academic feedback standards.
                   </span>
                 </motion.div>
               )}
@@ -535,23 +535,23 @@ export default function FeedbackPage() {
 
           {/* Validation Error Message */}
           {validationError && (
-            <div className="p-4 rounded-xl bg-rose-500/10 border border-rose-500/30 text-rose-600 dark:text-rose-400 text-sm font-semibold flex items-center gap-2">
+            <div className="p-4 rounded-2xl bg-rose-100 dark:bg-rose-950 border-2 border-rose-400 dark:border-rose-700 text-rose-950 dark:text-rose-200 text-sm font-extrabold flex items-center gap-2">
               <AlertCircle className="w-5 h-5 flex-shrink-0" />
               <span>{validationError}</span>
             </div>
           )}
 
           {/* Submit Action Bar */}
-          <div className="pt-4 border-t border-slate-200 dark:border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4">
-            <div className="text-xs text-slate-500 dark:text-slate-400 flex items-center gap-2">
-              <ShieldCheck className="w-4 h-4 text-emerald-500" />
-              <span>Cryptographic hash verification triggered on submit.</span>
+          <div className="pt-4 border-t-2 border-slate-200 dark:border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div className="text-xs text-slate-700 dark:text-slate-300 flex items-center gap-2 font-extrabold">
+              <ShieldCheck className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
+              <span>Cryptographic SHA-256 verification triggered on submit.</span>
             </div>
 
             <button
               type="submit"
               disabled={isCooldownActive}
-              className="w-full sm:w-auto px-8 py-4 rounded-2xl bg-gradient-to-r from-indigo-600 via-violet-600 to-fuchsia-600 hover:from-indigo-500 hover:to-fuchsia-500 text-white font-bold text-sm shadow-xl shadow-indigo-500/25 hover:shadow-indigo-500/40 hover:scale-[1.02] active:scale-[0.98] transition-all disabled:opacity-50 flex items-center justify-center gap-3"
+              className="w-full sm:w-auto px-8 py-4 rounded-2xl bg-gradient-to-r from-indigo-700 via-violet-700 to-fuchsia-700 hover:from-indigo-600 hover:to-fuchsia-600 text-white font-extrabold text-sm shadow-md shadow-indigo-600/30 hover:scale-[1.02] active:scale-[0.98] transition-all disabled:opacity-50 flex items-center justify-center gap-3"
             >
               <Sparkles className="w-5 h-5" />
               <span>Submit Anonymous Evaluation</span>
@@ -573,36 +573,36 @@ export default function FeedbackPage() {
               initial={{ scale: 0.8, y: 20 }}
               animate={{ scale: 1, y: 0 }}
               exit={{ scale: 0.8, y: 20 }}
-              className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-8 max-w-lg w-full text-center space-y-6 shadow-2xl relative overflow-hidden"
+              className="bg-white dark:bg-slate-900 border-2 border-slate-300 dark:border-slate-800 rounded-[32px] p-8 max-w-lg w-full text-center space-y-6 shadow-2xl relative overflow-hidden"
             >
-              <div className="w-20 h-20 mx-auto rounded-full bg-emerald-500/20 border-2 border-emerald-500 flex items-center justify-center text-emerald-500">
+              <div className="w-20 h-20 mx-auto rounded-full bg-emerald-500/20 border-2 border-emerald-500 flex items-center justify-center text-emerald-600 dark:text-emerald-400">
                 <CheckCircle2 className="w-10 h-10 animate-bounce" />
               </div>
 
               <div className="space-y-2">
-                <span className="text-xs font-extrabold uppercase tracking-widest text-emerald-600 dark:text-emerald-400">
+                <span className="text-xs font-extrabold uppercase tracking-widest text-emerald-700 dark:text-emerald-400">
                   Submission Verified
                 </span>
-                <h3 className="text-2xl font-extrabold text-slate-900 dark:text-white">
+                <h3 className="text-2xl font-extrabold text-slate-950 dark:text-white">
                   Anonymous Feedback Logged!
                 </h3>
-                <p className="text-sm text-slate-600 dark:text-slate-300">
-                  Your evaluation has been cryptographically integrated into the institutional analytics dataset for <strong className="text-indigo-600 dark:text-indigo-400">{activeFaculty?.name}</strong>.
+                <p className="text-sm text-slate-700 dark:text-slate-200 font-bold">
+                  Your evaluation has been cryptographically integrated into the institutional analytics dataset for <strong className="text-indigo-700 dark:text-indigo-300">{activeFaculty?.name}</strong>.
                 </p>
               </div>
 
               {lastSubmittedLog && (
-                <div className="p-4 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-left text-xs space-y-1">
-                  <div className="text-slate-400 font-medium">Log Record Hash:</div>
-                  <div className="font-mono text-indigo-500 truncate">{lastSubmittedLog.id} • {lastSubmittedLog.timestamp}</div>
-                  <div className="text-slate-400 pt-1">Sentiment Classification: <span className="uppercase font-bold text-emerald-500">{lastSubmittedLog.sentiment}</span></div>
+                <div className="p-4 rounded-2xl bg-slate-100 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-left text-xs space-y-1 font-bold">
+                  <div className="text-slate-600 dark:text-slate-400">Log Record Hash:</div>
+                  <div className="font-mono text-indigo-700 dark:text-indigo-300 truncate">{lastSubmittedLog.id} • {lastSubmittedLog.timestamp}</div>
+                  <div className="text-slate-600 dark:text-slate-400 pt-1">Sentiment Classification: <span className="uppercase font-extrabold text-emerald-700 dark:text-emerald-400">{lastSubmittedLog.sentiment}</span></div>
                 </div>
               )}
 
               <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
                 <button
                   onClick={resetForm}
-                  className="w-full sm:w-auto px-6 py-3 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 font-bold text-xs hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors flex items-center justify-center gap-2"
+                  className="w-full sm:w-auto px-6 py-3 rounded-2xl bg-slate-200 dark:bg-slate-800 text-slate-900 dark:text-slate-100 font-extrabold text-xs hover:bg-slate-300 dark:hover:bg-slate-700 transition-colors flex items-center justify-center gap-2"
                 >
                   <RefreshCw className="w-4 h-4" />
                   <span>Submit Another Review</span>
@@ -610,7 +610,7 @@ export default function FeedbackPage() {
 
                 <a
                   href="/dashboard"
-                  className="w-full sm:w-auto px-6 py-3 rounded-xl bg-indigo-600 text-white font-bold text-xs hover:bg-indigo-500 transition-colors flex items-center justify-center gap-2 shadow-md shadow-indigo-600/30"
+                  className="w-full sm:w-auto px-6 py-3 rounded-2xl bg-indigo-700 text-white font-extrabold text-xs hover:bg-indigo-600 transition-colors flex items-center justify-center gap-2 shadow-md shadow-indigo-700/30"
                 >
                   <span>View Dashboard</span>
                   <ArrowRight className="w-4 h-4" />

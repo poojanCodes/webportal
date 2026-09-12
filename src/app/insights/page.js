@@ -72,112 +72,113 @@ export default function InsightsPage() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 w-full space-y-10">
         {/* Page Header */}
         <div className="space-y-3">
-          <div className="gsap-reveal inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-fuchsia-500/10 text-fuchsia-700 dark:text-fuchsia-300 border border-fuchsia-500/20 text-xs font-bold">
+          <div className="gsap-reveal inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-fuchsia-500/10 text-fuchsia-700 dark:text-fuchsia-300 border border-fuchsia-500/20 text-xs font-bold shadow-sm">
             <BrainCircuit className="w-3.5 h-3.5 text-fuchsia-500" />
             <span>AI Automated Quality Engine</span>
           </div>
           <h1 className="gsap-reveal text-3xl sm:text-5xl font-extrabold tracking-tight text-slate-900 dark:text-white">
             AI Innovation & <span className="gradient-text">Sentiment Insights</span>
           </h1>
-          <p className="gsap-reveal text-sm sm:text-base text-slate-600 dark:text-slate-400 max-w-3xl">
+          <p className="gsap-reveal text-sm sm:text-base text-slate-600 dark:text-slate-400 max-w-3xl font-medium">
             Automated qualitative comment breakdown, AI-generated concrete development strategies, and longitudinal performance shifts across recent academic evaluation terms.
           </p>
         </div>
 
-        {/* 1. Comment Sentiment Distribution Cards */}
+        {/* 1. Comment Sentiment Distribution Cards (Bento Soft Pastel Palette) */}
         <div className="gsap-reveal grid grid-cols-1 md:grid-cols-3 gap-6">
-          {/* Positive Sentiment */}
-          <div className="p-6 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-xl space-y-3 hover:border-emerald-500/50 transition-colors">
+          
+          {/* Positive Sentiment (Bento Green) */}
+          <div className="bento-card bento-green p-6 space-y-3 shadow-sm">
             <div className="flex items-center justify-between">
-              <div className="w-12 h-12 rounded-2xl bg-emerald-500/10 text-emerald-500 flex items-center justify-center">
+              <div className="w-12 h-12 rounded-2xl bg-emerald-500/20 text-emerald-800 dark:text-emerald-300 border border-emerald-500/30 flex items-center justify-center">
                 <Smile className="w-6 h-6" />
               </div>
-              <span className="text-2xl font-extrabold text-emerald-500">
+              <span className="text-3xl font-extrabold text-emerald-800 dark:text-emerald-300">
                 {sentimentStats.positivePct}%
               </span>
             </div>
             <div>
-              <h3 className="font-bold text-base text-slate-900 dark:text-white">
+              <h3 className="font-bold text-base">
                 Positive Sentiment
               </h3>
-              <p className="text-xs text-slate-500 dark:text-slate-400">
+              <p className="text-xs text-slate-600 dark:text-slate-300 font-medium">
                 Praising teaching clarity, mastery, and engaging classroom delivery.
               </p>
             </div>
-            <div className="w-full bg-slate-100 dark:bg-slate-800 h-2 rounded-full overflow-hidden">
+            <div className="w-full bg-emerald-500/20 h-2 rounded-full overflow-hidden">
               <div
-                className="bg-emerald-500 h-full rounded-full"
+                className="bg-emerald-600 h-full rounded-full"
                 style={{ width: `${sentimentStats.positivePct}%` }}
               />
             </div>
           </div>
 
-          {/* Neutral / Informational */}
-          <div className="p-6 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-xl space-y-3 hover:border-blue-500/50 transition-colors">
+          {/* Neutral / Balanced (Bento Blue) */}
+          <div className="bento-card bento-blue p-6 space-y-3 shadow-sm">
             <div className="flex items-center justify-between">
-              <div className="w-12 h-12 rounded-2xl bg-blue-500/10 text-blue-500 flex items-center justify-center">
+              <div className="w-12 h-12 rounded-2xl bg-blue-500/20 text-blue-800 dark:text-blue-300 border border-blue-500/30 flex items-center justify-center">
                 <Meh className="w-6 h-6" />
               </div>
-              <span className="text-2xl font-extrabold text-blue-500">
+              <span className="text-3xl font-extrabold text-blue-800 dark:text-blue-300">
                 {sentimentStats.neutralPct}%
               </span>
             </div>
             <div>
-              <h3 className="font-bold text-base text-slate-900 dark:text-white">
+              <h3 className="font-bold text-base">
                 Neutral / Balanced
               </h3>
-              <p className="text-xs text-slate-500 dark:text-slate-400">
+              <p className="text-xs text-slate-600 dark:text-slate-300 font-medium">
                 Constructive observations regarding course pacing or assignment difficulty.
               </p>
             </div>
-            <div className="w-full bg-slate-100 dark:bg-slate-800 h-2 rounded-full overflow-hidden">
+            <div className="w-full bg-blue-500/20 h-2 rounded-full overflow-hidden">
               <div
-                className="bg-blue-500 h-full rounded-full"
+                className="bg-blue-600 h-full rounded-full"
                 style={{ width: `${sentimentStats.neutralPct}%` }}
               />
             </div>
           </div>
 
-          {/* Actionable Concern */}
-          <div className="p-6 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-xl space-y-3 hover:border-rose-500/50 transition-colors">
+          {/* Actionable Concern (Bento Peach) */}
+          <div className="bento-card bento-peach p-6 space-y-3 shadow-sm">
             <div className="flex items-center justify-between">
-              <div className="w-12 h-12 rounded-2xl bg-rose-500/10 text-rose-500 flex items-center justify-center">
+              <div className="w-12 h-12 rounded-2xl bg-orange-500/20 text-orange-800 dark:text-orange-300 border border-orange-500/30 flex items-center justify-center">
                 <AlertCircle className="w-6 h-6" />
               </div>
-              <span className="text-2xl font-extrabold text-rose-500">
+              <span className="text-3xl font-extrabold text-orange-800 dark:text-orange-300">
                 {sentimentStats.actionablePct}%
               </span>
             </div>
             <div>
-              <h3 className="font-bold text-base text-slate-900 dark:text-white">
+              <h3 className="font-bold text-base">
                 Actionable Concern
               </h3>
-              <p className="text-xs text-slate-500 dark:text-slate-400">
+              <p className="text-xs text-slate-600 dark:text-slate-300 font-medium">
                 Highlights specific gaps in lab hardware, grading delays, or lecture pacing.
               </p>
             </div>
-            <div className="w-full bg-slate-100 dark:bg-slate-800 h-2 rounded-full overflow-hidden">
+            <div className="w-full bg-orange-500/20 h-2 rounded-full overflow-hidden">
               <div
-                className="bg-rose-500 h-full rounded-full"
+                className="bg-orange-600 h-full rounded-full"
                 style={{ width: `${sentimentStats.actionablePct}%` }}
               />
             </div>
           </div>
         </div>
 
-        {/* 2. Longitudinal Trend Indicators (Sparklines Grid) */}
-        <div className="gsap-reveal p-6 sm:p-8 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-xl space-y-6">
+        {/* 2. Longitudinal Trend Indicators (Sparklines Grid in Bento Lavender) */}
+        <div className="gsap-reveal bento-card bento-lavender p-6 sm:p-8 shadow-sm space-y-6">
           <div className="flex items-center justify-between">
             <div>
-              <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-indigo-600 dark:text-indigo-400">
+              <div className="inline-flex items-center gap-2 text-xs font-extrabold uppercase tracking-wider text-indigo-800 dark:text-indigo-300">
                 <TrendingUp className="w-4 h-4" />
                 <span>Term-by-Term Trajectory</span>
               </div>
-              <h3 className="text-2xl font-bold text-slate-900 dark:text-white">
+              <h3 className="text-2xl font-extrabold tracking-tight">
                 Longitudinal Performance Shifts
               </h3>
             </div>
-            <span className="text-xs text-slate-500 font-semibold hidden sm:inline-block">
+            <span className="text-xs font-bold text-slate-600 dark:text-slate-300 hidden sm:inline-block">
               4 Evaluation Cycles (Fall '24 $\rightarrow$ Fall '26)
             </span>
           </div>
@@ -193,7 +194,7 @@ export default function InsightsPage() {
               return (
                 <div
                   key={f.id}
-                  className="p-4 rounded-2xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200/60 dark:border-slate-700/50 flex items-center justify-between gap-4"
+                  className="p-4 rounded-2xl bg-white/70 dark:bg-slate-900/60 border border-purple-200 dark:border-purple-900/50 flex items-center justify-between gap-4"
                 >
                   <div className="flex items-center gap-3">
                     <div
@@ -205,7 +206,7 @@ export default function InsightsPage() {
                       <h4 className="font-bold text-sm text-slate-900 dark:text-white">
                         {f.name}
                       </h4>
-                      <p className="text-[10px] text-slate-500 dark:text-slate-400">
+                      <p className="text-[10px] text-slate-500 dark:text-slate-400 font-medium">
                         {f.departmentCode} • Score: {f.metrics.overallScore}
                       </p>
                     </div>
@@ -235,8 +236,8 @@ export default function InsightsPage() {
                     <span
                       className={`text-xs font-bold px-2 py-1 rounded-lg ${
                         isUp
-                          ? "bg-emerald-500/10 text-emerald-500"
-                          : "bg-rose-500/10 text-rose-500"
+                          ? "bg-emerald-500/20 text-emerald-800 dark:text-emerald-300"
+                          : "bg-rose-500/20 text-rose-800 dark:text-rose-300"
                       }`}
                     >
                       {isUp ? `+${diff}` : `${diff}`}
@@ -248,8 +249,8 @@ export default function InsightsPage() {
           </div>
         </div>
 
-        {/* 3. AI-Generated Actionable Feedback Summaries */}
-        <div className="gsap-reveal p-6 sm:p-8 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-xl space-y-6">
+        {/* 3. AI-Generated Actionable Feedback Summaries (Bento Grid Cards) */}
+        <div className="gsap-reveal bento-card bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-6 sm:p-8 shadow-sm space-y-6">
           <div>
             <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-fuchsia-600 dark:text-fuchsia-400">
               <Lightbulb className="w-4 h-4" />
@@ -258,7 +259,7 @@ export default function InsightsPage() {
             <h3 className="text-2xl font-bold text-slate-900 dark:text-white">
               AI-Synthesized Faculty Development Strategies
             </h3>
-            <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
+            <p className="text-xs text-slate-500 dark:text-slate-400 mt-1 font-medium">
               Data-driven action steps computed from multi-dimensional evaluation gaps.
             </p>
           </div>
@@ -267,7 +268,7 @@ export default function InsightsPage() {
             {aiStrategies.map(({ faculty, strategies }) => (
               <div
                 key={faculty.id}
-                className="p-6 rounded-2xl bg-slate-50/80 dark:bg-slate-800/40 border border-slate-200 dark:border-slate-700/60 space-y-4"
+                className="p-6 rounded-2xl bg-slate-50 dark:bg-slate-800/40 border border-slate-200 dark:border-slate-700/60 space-y-4"
               >
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-3">
@@ -280,7 +281,7 @@ export default function InsightsPage() {
                       <h4 className="font-bold text-sm text-slate-900 dark:text-white">
                         {faculty.name}
                       </h4>
-                      <p className="text-xs text-slate-500 dark:text-slate-400">
+                      <p className="text-xs text-slate-500 dark:text-slate-400 font-medium">
                         {faculty.title}
                       </p>
                     </div>
@@ -290,11 +291,11 @@ export default function InsightsPage() {
                 </div>
 
                 <div className="space-y-2 pt-2 border-t border-slate-200 dark:border-slate-700">
-                  <div className="text-[10px] uppercase font-bold text-indigo-500 tracking-wider">
+                  <div className="text-[10px] uppercase font-bold text-indigo-600 dark:text-indigo-400 tracking-wider">
                     AI Recommended Action Items:
                   </div>
                   {strategies.map((strat, sIdx) => (
-                    <div key={sIdx} className="flex items-start gap-2 text-xs text-slate-700 dark:text-slate-300">
+                    <div key={sIdx} className="flex items-start gap-2 text-xs text-slate-700 dark:text-slate-300 font-medium">
                       <Target className="w-3.5 h-3.5 text-indigo-500 flex-shrink-0 mt-0.5" />
                       <span>{strat}</span>
                     </div>

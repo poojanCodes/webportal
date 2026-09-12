@@ -114,7 +114,7 @@ export default function AnalyticsPage() {
     });
   }, [departments, facultyList]);
 
-  // 3. Rating Density Distribution Chart Data (1 to 5 breakdown across all logs + seed)
+  // 3. Rating Density Distribution Chart Data (1 to 5 breakdown)
   const ratingDensityData = useMemo(() => {
     const counts = { 5: 0, 4: 0, 3: 0, 2: 0, 1: 0 };
     facultyList.forEach((f) => {
@@ -138,14 +138,14 @@ export default function AnalyticsPage() {
     if (delta > 0) {
       return {
         text: `+${delta.toFixed(2)}`,
-        color: "text-emerald-500",
+        color: "text-emerald-600 dark:text-emerald-400",
         icon: ArrowUpRight
       };
     }
     if (delta < 0) {
       return {
         text: `${delta.toFixed(2)}`,
-        color: "text-rose-500",
+        color: "text-rose-600 dark:text-rose-400",
         icon: ArrowDownRight
       };
     }
@@ -157,70 +157,71 @@ export default function AnalyticsPage() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 w-full space-y-10">
         {/* Page Header */}
         <div className="space-y-3">
-          <div className="gsap-reveal inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-violet-500/10 text-violet-700 dark:text-violet-300 border border-violet-500/20 text-xs font-bold">
+          <div className="gsap-reveal inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-violet-500/10 text-violet-700 dark:text-violet-300 border border-violet-500/20 text-xs font-bold shadow-sm">
             <BarChart3 className="w-3.5 h-3.5 text-violet-500" />
             <span>Multi-Dimensional Intelligence Suite</span>
           </div>
           <h1 className="gsap-reveal text-3xl sm:text-5xl font-extrabold tracking-tight text-slate-900 dark:text-white">
             Visual Reports & <span className="gradient-text">Comparative Analytics</span>
           </h1>
-          <p className="gsap-reveal text-sm sm:text-base text-slate-600 dark:text-slate-400 max-w-3xl">
+          <p className="gsap-reveal text-sm sm:text-base text-slate-600 dark:text-slate-400 max-w-3xl font-medium">
             Explore institution-wide radar skill footprints, department benchmark performance, rating density curves, and side-by-side faculty delta matrices.
           </p>
         </div>
 
-        {/* 1. Parameter Extremes Spotlight Banner */}
+        {/* 1. Parameter Extremes Spotlight Banner (Bento Green & Bento Peach Containers) */}
         <div className="gsap-reveal grid grid-cols-1 md:grid-cols-2 gap-6">
-          {/* Highest-Rated Parameter */}
-          <div className="p-6 rounded-3xl bg-gradient-to-r from-emerald-950 via-slate-900 to-slate-900 border border-emerald-500/30 text-white shadow-xl flex items-center justify-between">
+          
+          {/* Highest-Rated Parameter (Sage Green Bento Card) */}
+          <div className="bento-card bento-green p-6 shadow-sm flex items-center justify-between gap-4">
             <div className="space-y-2">
-              <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-emerald-400">
+              <div className="flex items-center gap-2 text-xs font-extrabold uppercase tracking-wider text-emerald-800 dark:text-emerald-300">
                 <Award className="w-4 h-4" />
                 <span>Highest-Rated Institutional Parameter</span>
               </div>
-              <h3 className="text-2xl font-extrabold text-white">
+              <h3 className="text-2xl font-extrabold tracking-tight">
                 {stats.highestParam?.label || "Subject Knowledge"}
               </h3>
-              <p className="text-xs text-slate-300">
-                Consistently highest across all academic departments with zero critical policy drop-offs.
+              <p className="text-xs text-slate-600 dark:text-slate-300 font-medium">
+                Consistently highest across all academic departments.
               </p>
             </div>
-            <div className="p-4 rounded-2xl bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 text-center font-extrabold text-2xl">
+            <div className="p-4 rounded-2xl bg-emerald-500/20 border border-emerald-500/30 text-center font-extrabold text-2xl flex-shrink-0">
               {stats.highestParam?.avg || "4.65"}
-              <span className="text-xs text-slate-400 block font-normal">/ 5.0</span>
+              <span className="text-[10px] text-slate-500 block font-bold uppercase">/ 5.0</span>
             </div>
           </div>
 
-          {/* Lowest-Rated Parameter */}
-          <div className="p-6 rounded-3xl bg-gradient-to-r from-amber-950 via-slate-900 to-slate-900 border border-amber-500/30 text-white shadow-xl flex items-center justify-between">
+          {/* Lowest-Rated Parameter (Soft Peach Bento Card) */}
+          <div className="bento-card bento-peach p-6 shadow-sm flex items-center justify-between gap-4">
             <div className="space-y-2">
-              <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-amber-400">
+              <div className="flex items-center gap-2 text-xs font-extrabold uppercase tracking-wider text-orange-800 dark:text-orange-300">
                 <AlertTriangle className="w-4 h-4" />
                 <span>Lowest-Rated Parameter (Target Area)</span>
               </div>
-              <h3 className="text-2xl font-extrabold text-white">
+              <h3 className="text-2xl font-extrabold tracking-tight">
                 {stats.lowestParam?.label || "Punctuality & Lab Discipline"}
               </h3>
-              <p className="text-xs text-slate-300">
-                Primary focal point identified for institutional workshop pacing and faculty development.
+              <p className="text-xs text-slate-600 dark:text-slate-300 font-medium">
+                Primary focal point identified for faculty workshop pacing.
               </p>
             </div>
-            <div className="p-4 rounded-2xl bg-amber-500/20 text-amber-400 border border-amber-500/30 text-center font-extrabold text-2xl">
+            <div className="p-4 rounded-2xl bg-orange-500/20 border border-orange-500/30 text-center font-extrabold text-2xl flex-shrink-0">
               {stats.lowestParam?.avg || "3.90"}
-              <span className="text-xs text-slate-400 block font-normal">/ 5.0</span>
+              <span className="text-[10px] text-slate-500 block font-bold uppercase">/ 5.0</span>
             </div>
           </div>
         </div>
 
-        {/* 2. Side-by-Side Faculty Comparison Tool */}
-        <div className="gsap-reveal p-6 sm:p-8 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-xl space-y-6">
-          <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 pb-6 border-b border-slate-200 dark:border-slate-800">
+        {/* 2. Side-by-Side Faculty Comparison Tool (Bento Blue Container) */}
+        <div className="gsap-reveal bento-card bento-blue p-6 sm:p-8 shadow-sm space-y-6">
+          <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 pb-6 border-b border-blue-200/80 dark:border-blue-900/40">
             <div>
-              <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-indigo-600 dark:text-indigo-400">
+              <div className="inline-flex items-center gap-2 text-xs font-extrabold uppercase tracking-wider text-blue-800 dark:text-blue-300">
                 <GitCompare className="w-4 h-4" />
                 <span>Comparative Matrix Engine</span>
               </div>
-              <h3 className="text-2xl font-bold text-slate-900 dark:text-white">
+              <h3 className="text-2xl font-extrabold tracking-tight">
                 Side-by-Side Faculty Delta Comparison
               </h3>
             </div>
@@ -228,11 +229,11 @@ export default function AnalyticsPage() {
             {/* Dual Dropdown Selectors */}
             <div className="flex flex-wrap items-center gap-3 w-full md:w-auto">
               <div className="space-y-1">
-                <label className="text-[10px] uppercase font-bold text-indigo-500">Faculty A</label>
+                <label className="text-[10px] uppercase font-extrabold text-indigo-700 dark:text-indigo-300">Faculty A</label>
                 <select
                   value={facultyAId}
                   onChange={(e) => setFacultyAId(e.target.value)}
-                  className="px-3.5 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-800 border border-indigo-300 dark:border-indigo-700 text-slate-900 dark:text-white text-xs font-semibold"
+                  className="px-3.5 py-2.5 rounded-xl bg-white dark:bg-slate-800 border border-indigo-300 dark:border-indigo-700 text-slate-900 dark:text-white text-xs font-semibold"
                 >
                   {facultyList.map((f) => (
                     <option key={f.id} value={f.id}>
@@ -242,14 +243,14 @@ export default function AnalyticsPage() {
                 </select>
               </div>
 
-              <span className="text-slate-400 font-bold text-xs pt-4">VS</span>
+              <span className="text-slate-400 font-extrabold text-xs pt-4">VS</span>
 
               <div className="space-y-1">
-                <label className="text-[10px] uppercase font-bold text-violet-500">Faculty B</label>
+                <label className="text-[10px] uppercase font-extrabold text-violet-700 dark:text-violet-300">Faculty B</label>
                 <select
                   value={facultyBId}
                   onChange={(e) => setFacultyBId(e.target.value)}
-                  className="px-3.5 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-800 border border-violet-300 dark:border-violet-700 text-slate-900 dark:text-white text-xs font-semibold"
+                  className="px-3.5 py-2.5 rounded-xl bg-white dark:bg-slate-800 border border-violet-300 dark:border-violet-700 text-slate-900 dark:text-white text-xs font-semibold"
                 >
                   {facultyList.map((f) => (
                     <option key={f.id} value={f.id}>
@@ -264,20 +265,20 @@ export default function AnalyticsPage() {
           {/* Comparison Delta Table */}
           {facultyA && facultyB && (
             <div className="overflow-x-auto">
-              <table className="w-full text-left text-xs">
+              <table className="w-full text-left text-xs font-semibold">
                 <thead>
-                  <tr className="border-b border-slate-200 dark:border-slate-800 text-slate-500 uppercase tracking-wider">
+                  <tr className="border-b border-blue-200/80 dark:border-blue-900/40 text-slate-500 uppercase tracking-wider">
                     <th className="py-3 px-4">Evaluation Dimension</th>
-                    <th className="py-3 px-4 text-indigo-600 dark:text-indigo-400 font-bold">
+                    <th className="py-3 px-4 text-indigo-700 dark:text-indigo-300 font-bold">
                       {facultyA.name}
                     </th>
-                    <th className="py-3 px-4 text-violet-600 dark:text-violet-400 font-bold">
+                    <th className="py-3 px-4 text-violet-700 dark:text-violet-300 font-bold">
                       {facultyB.name}
                     </th>
                     <th className="py-3 px-4 text-right">Delta Difference (A - B)</th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-slate-100 dark:divide-slate-800">
+                <tbody className="divide-y divide-blue-100 dark:divide-blue-900/30">
                   {[
                     { label: "Subject Knowledge", key: "subjectKnowledge" },
                     { label: "Explanation & Clarity", key: "clarity" },
@@ -293,17 +294,17 @@ export default function AnalyticsPage() {
                     const DeltaIcon = deltaObj.icon;
 
                     return (
-                      <tr key={row.key} className="hover:bg-slate-50 dark:hover:bg-slate-800/50">
-                        <td className="py-3 px-4 font-semibold text-slate-900 dark:text-white">
+                      <tr key={row.key} className="hover:bg-white/50 dark:hover:bg-slate-800/40">
+                        <td className="py-3 px-4 font-bold text-slate-900 dark:text-white">
                           {row.label}
                         </td>
-                        <td className="py-3 px-4 font-bold text-slate-800 dark:text-slate-200">
+                        <td className="py-3 px-4 font-extrabold text-slate-800 dark:text-slate-200">
                           {valA}
                         </td>
-                        <td className="py-3 px-4 font-bold text-slate-800 dark:text-slate-200">
+                        <td className="py-3 px-4 font-extrabold text-slate-800 dark:text-slate-200">
                           {valB}
                         </td>
-                        <td className={`py-3 px-4 text-right font-bold flex items-center justify-end gap-1 ${deltaObj.color}`}>
+                        <td className={`py-3 px-4 text-right font-extrabold flex items-center justify-end gap-1 ${deltaObj.color}`}>
                           <DeltaIcon className="w-4 h-4" />
                           <span>{deltaObj.text}</span>
                         </td>
@@ -319,16 +320,14 @@ export default function AnalyticsPage() {
         {/* 3. Multi-Dimensional Visualizations Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Chart 1: Radar Skill Footprint */}
-          <div className="gsap-reveal p-6 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-xl space-y-4">
-            <div className="flex items-center justify-between">
-              <div>
-                <h3 className="font-bold text-lg text-slate-900 dark:text-white">
-                  Multi-Parameter Skill Footprint (Radar)
-                </h3>
-                <p className="text-xs text-slate-500 dark:text-slate-400">
-                  Comparing selected faculty signatures across 6 dimensions.
-                </p>
-              </div>
+          <div className="gsap-reveal bento-card bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-6 shadow-sm space-y-4">
+            <div>
+              <h3 className="font-bold text-lg text-slate-900 dark:text-white">
+                Multi-Parameter Skill Footprint (Radar)
+              </h3>
+              <p className="text-xs text-slate-500 dark:text-slate-400 font-medium">
+                Comparing selected faculty signatures across 6 dimensions.
+              </p>
             </div>
 
             <div className="w-full h-80 pt-4">
@@ -359,12 +358,12 @@ export default function AnalyticsPage() {
           </div>
 
           {/* Chart 2: Rating Density Distribution Breakdown */}
-          <div className="gsap-reveal p-6 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-xl space-y-4">
+          <div className="gsap-reveal bento-card bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-6 shadow-sm space-y-4">
             <div>
               <h3 className="font-bold text-lg text-slate-900 dark:text-white">
                 Rating Density Distribution (1 to 5 Stars)
               </h3>
-              <p className="text-xs text-slate-500 dark:text-slate-400">
+              <p className="text-xs text-slate-500 dark:text-slate-400 font-medium">
                 Proportion of evaluations across all rating tiers.
               </p>
             </div>
@@ -394,12 +393,12 @@ export default function AnalyticsPage() {
         </div>
 
         {/* Chart 3: Department-Wise Grouped Bar Chart */}
-        <div className="gsap-reveal p-6 sm:p-8 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-xl space-y-4">
+        <div className="gsap-reveal bento-card bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-6 sm:p-8 shadow-sm space-y-4">
           <div>
             <h3 className="font-bold text-lg text-slate-900 dark:text-white">
               Department Benchmark Comparisons (Grouped Bar)
             </h3>
-            <p className="text-xs text-slate-500 dark:text-slate-400">
+            <p className="text-xs text-slate-500 dark:text-slate-400 font-medium">
               Cross-departmental averages across key parameters (Subject Knowledge, Clarity, Engagement, Overall Avg).
             </p>
           </div>

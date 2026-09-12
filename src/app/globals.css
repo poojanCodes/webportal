@@ -4,17 +4,17 @@
   :root {
     --bg-primary: #f8fafc;
     --bg-surface: #ffffff;
-    --border-color: #e2e8f0;
+    --border-color: #cbd5e1;
     --text-main: #0f172a;
-    --text-muted: #64748b;
+    --text-muted: #475569;
   }
 
   .dark {
     --bg-primary: #0b0f19;
     --bg-surface: #111827;
-    --border-color: #1e293b;
+    --border-color: #334155;
     --text-main: #f8fafc;
-    --text-muted: #94a3b8;
+    --text-muted: #cbd5e1;
   }
 
   body {
@@ -29,65 +29,166 @@
 
 /* Glassmorphism & Header Utilities */
 .glass-header {
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.92);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
 }
 
 .dark .glass-header {
-  background: rgba(11, 15, 25, 0.75);
+  background: rgba(11, 15, 25, 0.92);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
 }
 
-.glass-card {
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border: 1px solid rgba(226, 232, 240, 0.8);
+/* ========================================================================= */
+/* HIGH-CONTRAST BENTO CARD SYSTEM (WCAG AAA Readability Standards)           */
+/* ========================================================================= */
+.bento-card {
+  border-radius: 28px;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease;
 }
 
-.dark .glass-card {
-  background: rgba(17, 24, 39, 0.65);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border: 1px solid rgba(30, 41, 59, 0.6);
+.bento-card:hover {
+  transform: translateY(-2px);
 }
 
-.gradient-glow {
-  background: linear-gradient(135deg, rgba(79, 70, 229, 0.18), rgba(124, 58, 237, 0.18));
+/* 1. Lavender Bento (High Contrast Deep Violet Text) */
+.bento-lavender {
+  background-color: #f5f3ff;
+  border: 1.5px solid #ddd6fe;
+  color: #2e1065;
 }
 
+.bento-lavender .bento-subtext {
+  color: #4c1d95;
+}
+
+.dark .bento-lavender {
+  background-color: #111827;
+  border: 1.5px solid #7c3aed;
+  color: #f8fafc;
+}
+
+.dark .bento-lavender .bento-subtext {
+  color: #cbd5e1;
+}
+
+/* 2. Pink Bento (High Contrast Deep Burgundy Text) */
+.bento-pink {
+  background-color: #fce7f3;
+  border: 1.5px solid #fbcfe8;
+  color: #831843;
+}
+
+.bento-pink .bento-subtext {
+  color: #9d174d;
+}
+
+.dark .bento-pink {
+  background-color: #111827;
+  border: 1.5px solid #ec4899;
+  color: #f8fafc;
+}
+
+.dark .bento-pink .bento-subtext {
+  color: #cbd5e1;
+}
+
+/* 3. Butter Yellow Bento (High Contrast Deep Amber/Brown Text) */
+.bento-yellow {
+  background-color: #fef3c7;
+  border: 1.5px solid #fde68a;
+  color: #78350f;
+}
+
+.bento-yellow .bento-subtext {
+  color: #92400e;
+}
+
+.dark .bento-yellow {
+  background-color: #111827;
+  border: 1.5px solid #f59e0b;
+  color: #f8fafc;
+}
+
+.dark .bento-yellow .bento-subtext {
+  color: #cbd5e1;
+}
+
+/* 4. Sage Green Bento (High Contrast Deep Forest Green Text) */
+.bento-green {
+  background-color: #d1fae5;
+  border: 1.5px solid #a7f3d0;
+  color: #064e3b;
+}
+
+.bento-green .bento-subtext {
+  color: #065f46;
+}
+
+.dark .bento-green {
+  background-color: #111827;
+  border: 1.5px solid #10b981;
+  color: #f8fafc;
+}
+
+.dark .bento-green .bento-subtext {
+  color: #cbd5e1;
+}
+
+/* 5. Soft Peach Bento (High Contrast Deep Terracotta Text) */
+.bento-peach {
+  background-color: #ffedd5;
+  border: 1.5px solid #fdba74;
+  color: #7c2d12;
+}
+
+.bento-peach .bento-subtext {
+  color: #9a3412;
+}
+
+.dark .bento-peach {
+  background-color: #111827;
+  border: 1.5px solid #f97316;
+  color: #f8fafc;
+}
+
+.dark .bento-peach .bento-subtext {
+  color: #cbd5e1;
+}
+
+/* 6. Ice Blue Bento (High Contrast Deep Navy Text) */
+.bento-blue {
+  background-color: #e0f2fe;
+  border: 1.5px solid #bae6fd;
+  color: #0c4a6e;
+}
+
+.bento-blue .bento-subtext {
+  color: #075985;
+}
+
+.dark .bento-blue {
+  background-color: #111827;
+  border: 1.5px solid #3b82f6;
+  color: #f8fafc;
+}
+
+.dark .bento-blue .bento-subtext {
+  color: #cbd5e1;
+}
+
+/* High Contrast Typography Gradient */
 .gradient-text {
-  background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+  background: linear-gradient(135deg, #3730a3 0%, #6b21a8 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .dark .gradient-text {
-  background: linear-gradient(135deg, #818cf8 0%, #c084fc 100%);
+  background: linear-gradient(135deg, #a5b4fc 0%, #e9d5ff 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-}
-
-/* Kinetic Gradient Mesh Animation */
-@keyframes pulseGlow {
-  0%, 100% {
-    transform: scale(1) translate(0px, 0px);
-    opacity: 0.35;
-  }
-  50% {
-    transform: scale(1.1) translate(24px, -24px);
-    opacity: 0.65;
-  }
-}
-
-.animate-mesh-1 {
-  animation: pulseGlow 14s infinite ease-in-out;
-}
-
-.animate-mesh-2 {
-  animation: pulseGlow 18s infinite ease-in-out reverse;
 }
 
 /* Custom Scrollbar */
@@ -101,12 +202,12 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(99, 102, 241, 0.3);
+  background: rgba(79, 70, 229, 0.4);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(99, 102, 241, 0.6);
+  background: rgba(79, 70, 229, 0.7);
 }
 
 /* Print Stylesheet */
@@ -124,9 +225,9 @@
     display: block !important;
   }
 
-  .glass-card, .dark .glass-card {
+  .bento-card, .glass-card, .dark .bento-card {
     background: #ffffff !important;
-    border: 1px solid #cccccc !important;
+    border: 1.5px solid #666666 !important;
     box-shadow: none !important;
     color: #000000 !important;
   }
